@@ -16,75 +16,17 @@ import java.util.List;
 
 public abstract class  BasePage {
 
-    @FindBy(css = "span.title-level-1")
-    public List<WebElement> menuOptions;
 
-    @FindBy(css = "div[class='loader-mask shown']")
-    @CacheLookup
-    protected WebElement loaderMask;
-
-    @FindBy(css = "h1[class='oro-subtitle']")
-    public WebElement pageSubTitle;
-
-    @FindBy(css = "#user-menu > a")
-    public WebElement userName;
-
-    @FindBy(linkText = "Logout")
-    public WebElement logOutLink;
-
-    @FindBy(linkText = "My User")
-    public WebElement myUser;
 
     public BasePage() {
+
         PageFactory.initElements(SkyDriver.get(), this);
     }
 
 
-    /**
-     * @return page name, for example: Dashboard
-     */
-    public String getPageSubTitle() {
-        //ant time we are verifying page name, or page subtitle, loader mask appears
-        waitUntilLoaderScreenDisappear();
-//        BrowserUtils.waitForStaleElement(pageSubTitle);
-        return pageSubTitle.getText();
-    }
-
-
-    /**
-     * Waits until loader screen present. If loader screen will not pop up at all,
-     * NoSuchElementException will be handled  bu try/catch block
-     * Thus, we can continue in any case.
-     */
-    public void waitUntilLoaderScreenDisappear() {
-        try {
-            WebDriverWait wait = new WebDriverWait(SkyDriver.get(), 5);
-            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public String getUserName(){
-        waitUntilLoaderScreenDisappear();
-        SkyUtils.waitForVisibility(userName, 5);
-        return userName.getText();
-    }
 
 
 
-    public void logOut(){
-        SkyUtils.waitFor(2);
-        SkyUtils.clickWithJS(userName);
-        SkyUtils.clickWithJS(logOutLink);
-    }
-    public void goToMyUser(){
-        waitUntilLoaderScreenDisappear();
-        SkyUtils.waitForClickablility(userName, 5).click();
-        SkyUtils.waitForClickablility(myUser, 5).click();
-
-    }
 
     /**
      * This method will navigate user to the specific module in vytrack application.
