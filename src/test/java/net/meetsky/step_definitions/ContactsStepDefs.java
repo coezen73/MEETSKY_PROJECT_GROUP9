@@ -34,9 +34,15 @@ public class ContactsStepDefs {
     }
 
     @When("Navigate to {string} module")
-    public void navigate_to_module(String contacts) {
-        new MainPage().contacts.click();
-
+    public void navigate_to_module(String moduleName) {
+        switch (moduleName){
+            case "Contacts":
+                new MainPage().contacts.click();
+                break;
+            case "Talk":
+                new MainPage().talk.click();
+                break;
+        }
     }
 
     @When("Click {string} button")

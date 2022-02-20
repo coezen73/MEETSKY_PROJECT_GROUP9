@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         glue = "net/meetsky/step_definitions",
         strict = true,
         dryRun = false,
-        tags = "@Contacts"
+        tags = "@ETSKY-337"
 )
 public class SkyRunner {
 }
