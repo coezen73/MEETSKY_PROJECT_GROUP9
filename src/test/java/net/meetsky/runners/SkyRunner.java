@@ -7,13 +7,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json",
+        plugin = {"pretty",
+                "json:target/cucumber.json",
                 "html:target/default-html-reports",
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "net/meetsky/step_definitions",
-        dryRun = true,
-        tags = "@Eric"
+        strict = true,
+        dryRun = false,
+        tags = "@ETSKY-337"
 )
 public class SkyRunner {
 }

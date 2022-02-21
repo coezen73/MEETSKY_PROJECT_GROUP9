@@ -53,7 +53,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>Alphabetical</runOrder>
                     <includes>
-                        <include>**/*CukesRunner.java</include>
+                        <include>**/*SkyRunner.java</include>
                         <include>**/*FailedTestRunner.java</include>
                     </includes>
                 </configuration>
