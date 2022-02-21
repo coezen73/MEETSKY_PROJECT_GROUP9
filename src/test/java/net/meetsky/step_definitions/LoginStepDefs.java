@@ -1,5 +1,4 @@
 package net.meetsky.step_definitions;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,14 +10,14 @@ import org.junit.Assert;
 public class LoginStepDefs {
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
-      String url = ConfigurationReader.get("url");
+        String url = ConfigurationReader.get("url");
         SkyDriver.get().get(url);
     }
 
     @When("the user enters the verified information")
     public void the_user_enters_the_verified_information() {
-     String username = ConfigurationReader.get("username");
-     String password = ConfigurationReader.get("password");
+        String username = ConfigurationReader.get("username");
+        String password = ConfigurationReader.get("password");
 
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
@@ -31,4 +30,17 @@ public class LoginStepDefs {
         Assert.assertEquals("Files - Meetsky - QA", actualTitle);
 
     }
+
+    @When("the the user logged in {string} and {string}")
+    public void the_the_user_logged_in_and(String username, String password) {
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username,password);
+    }
+
+    @Then("the user should see the message {string}")
+    public void the_user_should_see_the_message(String expectedMessage) {
+        Assert.assertEquals(expectedMessage,new LoginPage().errorMsg.getText());
+    }
+
+
 }

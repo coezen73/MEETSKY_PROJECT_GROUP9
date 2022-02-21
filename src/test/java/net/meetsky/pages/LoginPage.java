@@ -1,11 +1,12 @@
 package net.meetsky.pages;
 
 import net.meetsky.utilities.SkyDriver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.FindBy;
+        import org.openqa.selenium.support.PageFactory;
 
+import java.awt.*;
 
 
 public class LoginPage {
@@ -24,11 +25,15 @@ public class LoginPage {
     @FindBy(id = "submit-form")
     public WebElement submit;
 
-  public void login(String usernameStr, String passwordStr){
+    @FindBy(css = ".warning")
+    public WebElement errorMsg;
 
-      usernameInputBox.sendKeys(usernameStr);
-      passwordInputBox.sendKeys(passwordStr);
-      submit.click();
-  }
+
+    public void login(String usernameStr, String passwordStr){
+
+        usernameInputBox.sendKeys(usernameStr);
+        passwordInputBox.sendKeys(passwordStr);
+        submit.click();
+    }
 
 }
