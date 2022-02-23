@@ -22,7 +22,7 @@ public class FilesPage extends BasePage {
     public WebElement newFolderButton;
 
     @FindBy(xpath = "(//span[@class='displayname'])[3]")
-    public WebElement newtextDocument;
+    public WebElement newTextDocument;
 
     @FindBy(xpath = "(//input[@id='view13-input-folder'])[1]")
     public WebElement newFolder;
@@ -45,7 +45,7 @@ public class FilesPage extends BasePage {
                 new FilesPage().newFolderButton.click();
                 break;
             case "New text document":
-                new FilesPage().newtextDocument.click();
+                new FilesPage().newTextDocument.click();
                 break;
         }
     }

@@ -19,16 +19,17 @@ public class FilesStepDefs {
         filesPage.addIcon.click();
         SkyUtils.waitFor(3);
     }
-    @Then("navigate to {string} button")
-    public void navigate_to_button(String buttonName) {
-        System.out.println("buttonName = " + buttonName);
-        filesPage.navigate(buttonName);
+//    @Then("navigate to {string} button")
+//    public void navigate_to_button(String buttonName) {
+//       // System.out.println("buttonName = " + buttonName);
+//       // filesPage.navigate(buttonName);
 
-    }
+//    }
 
     @When("user should be able to click {string} button")
     public void user_should_be_able_to_click_button(String buttonName) {
-        filesPage.newFolderButton.click();
+        filesPage.navigate(buttonName);
+        SkyUtils.waitFor(1);
     }
 
     @Then("user should be able to write {string} file name")
@@ -40,9 +41,9 @@ public class FilesStepDefs {
 
     @Then("user should be able to click confirm icon")
     public void user_should_be_able_to_click_confirm_icon() {
-        filesPage.confirm.click();
-        SkyUtils.waitFor(2);
-        SkyDriver.get().navigate().refresh();
+          filesPage.confirm.click();
+          SkyUtils.waitFor(2);
+          SkyDriver.get().navigate().refresh();
     }
 
         @Then("verify new {string} file is shown on the page")
