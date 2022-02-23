@@ -82,7 +82,7 @@ public class TalkStepDefs {
             Assert.assertTrue(s.contains("user01"));
         }
 
-
+    }
     @When("Click {string} inbox")
     public void click_inbox(String string) {
         new MainPage().talk.click();

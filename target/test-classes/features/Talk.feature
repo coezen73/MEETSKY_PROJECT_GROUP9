@@ -13,14 +13,14 @@ Feature: Default
 	#A pop-up should ask the user to enter the conversation name
 	#A pop-up should ask the user to add participants
 	#When clicking on Create button/link, the user should see the newly created conversation on the left
-	@ETSKY-336
-	Scenario: Talk Functionality Create a New Conversation - Cucumber S3
-		Given the user logged in
-		When navigate to Talk module
-		And display all conversation list under the Talk module
-		And click on +sign button
-		And enter conversation name and add click participants button
-		Then user created new conversation
+  @ETSKY-336
+  Scenario: Talk Functionality Create a New Conversation - Cucumber S3
+    Given the user logged in
+    When navigate to Talk module
+    And display all conversation list under the Talk module
+    And click on +sign button
+    And enter conversation name and add click participants button
+    Then user created new conversation
 
 @Talk
 

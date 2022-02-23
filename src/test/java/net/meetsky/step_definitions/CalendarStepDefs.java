@@ -3,6 +3,7 @@ package net.meetsky.step_definitions;
 
 import io.cucumber.java.en.When;
 
+
 import net.meetsky.utilities.SkyDriver;
 import net.meetsky.utilities.SkyUtils;
 import org.junit.Assert;
@@ -26,7 +27,7 @@ public class CalendarStepDefs {
 
     @When("navigate to Calendar module")
     public void navigate_to_Calendar_module() {
-        calendarPage.calendar.click();
+        calendarPage.CalendarButton.click();
         SkyUtils.waitFor(2);
 
 
