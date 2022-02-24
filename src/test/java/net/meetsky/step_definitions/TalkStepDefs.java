@@ -81,7 +81,7 @@ public class TalkStepDefs {
         for (String s : a) {
             Assert.assertTrue(s.contains("user01"));
         }
-
+    }
 
     @When("Click {string} inbox")
     public void click_inbox(String string) {
