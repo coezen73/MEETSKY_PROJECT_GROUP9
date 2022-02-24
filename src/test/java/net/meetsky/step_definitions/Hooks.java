@@ -15,7 +15,9 @@ public class Hooks {
     @Before
     public void setUp(){
         System.out.println("\tthis is coming from BEFORE");
+        SkyDriver.get().manage().window().maximize();
         SkyDriver.get().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
     }
 
     @After
