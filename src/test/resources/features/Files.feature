@@ -1,5 +1,6 @@
 Feature: Add New folder, it should expect all chars as file name
 
+
 	#{color:#ff0000}*US*{color}
 	#
 	#As a user, I can upload a file
@@ -18,4 +19,11 @@ Feature: Add New folder, it should expect all chars as file name
     And verify new "Şükriye_Doğaç!" file is shown on the page
 
 
-
+@coezen
+ Scenario: User can delete any selected item under the files module successfully
+   Given the user logged in
+   When user should be able to click "fileMark" button
+   Then verify that Actions button is appeared
+   When user should be able to click "Actions" button
+   Then user should be able to click "Delete" button
+   And verify that the file is deleted

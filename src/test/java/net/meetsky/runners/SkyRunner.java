@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "net/meetsky/step_definitions",
         strict = true,
-        dryRun = false,
+        dryRun =false,
 
-        tags = "@ETSKY-338"
+        tags = "@coezen"
 )
 
 public class SkyRunner {

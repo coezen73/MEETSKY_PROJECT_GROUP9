@@ -7,6 +7,7 @@ import net.meetsky.pages.TalkModulePage;
 import net.meetsky.utilities.SkyDriver;
 import net.meetsky.utilities.SkyUtils;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 
 import java.util.List;
@@ -28,8 +29,10 @@ public class FilesStepDefs {
 
     @When("user should be able to click {string} button")
     public void user_should_be_able_to_click_button(String buttonName) {
-        filesPage.navigate(buttonName);
-        SkyUtils.waitFor(1);
+        SkyUtils.waitFor(3);
+      filesPage.navigate(buttonName);
+       filesPage.selectCheckBox("MARK.docx");
+        SkyUtils.waitFor(3);
     }
 
     @Then("user should be able to write {string} file name")
@@ -53,7 +56,19 @@ public class FilesStepDefs {
         SkyUtils.waitFor(3);
         Assert.assertTrue(file.containsAll(file));
 
+    }
+    @Then("verify that Actions button is appeared")
+    public void verify_that_Actions_button_is_appeared() {
+     Assert.assertTrue( filesPage.actionsListButton.isEnabled());
+    }
+    @Then("verify that the file is deleted")
+    public void verify_that_the_file_is_deleted() {
+        SkyDriver.get().navigate().refresh();
+        SkyUtils.waitFor(3);
+
+      // Assert.assertFalse(filesPage.fileMark.isDisplayed());
 
     }
+
 
 }

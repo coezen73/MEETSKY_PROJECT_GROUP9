@@ -1,6 +1,7 @@
 package net.meetsky.pages;
 
 import net.meetsky.utilities.SkyDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,6 +37,28 @@ public class FilesPage extends BasePage {
     @FindBy(xpath = "//input[@type='file']")
     public WebElement iucar;
 
+    @FindBy(xpath = "//tbody[@id='fileList']//input[@type='checkbox']")
+    public List<WebElement> checkBoxes;
+
+    @FindBy(css = "[for='select-files-22216']")
+    public WebElement getCheckBox2;
+
+    @FindBy(css = "[for='select-files-22208']")
+    public WebElement getCheckBox3;
+
+    @FindBy(id = "fileList")
+    public List<WebElement> fileList;
+
+   @FindBy(xpath = "(//span[contains(text(),'Actions')])[1]")
+   public WebElement actionsListButton;
+
+   @FindBy(xpath = "(//li[@class='item-delete'])[1]")
+   public WebElement deleteButton;
+
+   @FindBy(xpath = "//tr[@data-file='MARK.docx']//td//label")
+   public WebElement fileMark;
+
+
     public void navigate(String buttonName) {
         switch (buttonName) {
             case "Upload file":
@@ -47,8 +70,25 @@ public class FilesPage extends BasePage {
             case "New text document":
                 new FilesPage().newTextDocument.click();
                 break;
+            case "fileMark":
+                new FilesPage().fileMark.click();
+                break;
+            case "Actions":
+                new FilesPage().actionsListButton.click();
+                break;
+            case"Delete":
+                new FilesPage().deleteButton.click();
+                break;
+
         }
     }
+
+    public  void selectCheckBox(String str){
+        SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).click();
+        System.out.println("SkyDriver.get().findElement(By.xpath(\"//tr[@data-file='\" + str + \"']//td//label\")).getText() " +
+                "= " + SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).getText());
+    }
+
 }
 
 
