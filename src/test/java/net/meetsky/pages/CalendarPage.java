@@ -23,7 +23,7 @@ public class CalendarPage {
     public WebElement hamburgerButton;
 
     @FindBy (xpath = "(//button//span[@class='action-button__text'])")
-    public WebElement allButtons;
+    public List<WebElement> allButtons;
 
     @FindBy (xpath = "(//span[normalize-space()='Day'])[1]")
     public WebElement day;

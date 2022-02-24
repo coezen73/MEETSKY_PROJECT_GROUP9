@@ -38,7 +38,7 @@ public class CalendarStepDefs {
 
         calendarPage.hamburgerButton.click();
         SkyUtils.waitFor(3);
-        List<String> expected = SkyUtils.getElementsText(By.xpath("(//button//span[@class='action-button__text'])"));
+        List<String> expected = SkyUtils.getElementsText(calendarPage.allButtons);
         List <String> actual = new ArrayList<>(Arrays.asList("Day","Week","Month","List"));
         Assert.assertTrue(expected.containsAll(actual));
 
