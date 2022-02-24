@@ -1,5 +1,6 @@
 package net.meetsky.pages;
 
+import gherkin.lexer.Fi;
 import net.meetsky.utilities.SkyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -49,7 +50,7 @@ public class FilesPage extends BasePage {
     @FindBy(id = "fileList")
     public List<WebElement> fileList;
 
-   @FindBy(xpath = "(//span[contains(text(),'Actions')])[1]")
+   @FindBy(xpath = "(//a[@class='actions-selected'])[1]")
    public WebElement actionsListButton;
 
    @FindBy(xpath = "(//li[@class='item-delete'])[1]")
@@ -57,6 +58,12 @@ public class FilesPage extends BasePage {
 
    @FindBy(xpath = "//tr[@data-file='MARK.docx']//td//label")
    public WebElement fileMark;
+
+   @FindBy (xpath = "//a[@href='/index.php/apps/files/']")
+   public WebElement navigateFileButton;
+
+   @FindBy (xpath = "//table[@id='filestable']/tbody/tr")
+   public List<WebElement> checkfileList;
 
 
     public void navigate(String buttonName) {

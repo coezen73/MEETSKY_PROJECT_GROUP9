@@ -22,8 +22,8 @@ Feature: Add New folder, it should expect all chars as file name
 @coezen
  Scenario: User can delete any selected item under the files module successfully
    Given the user logged in
-   When user should be able to click "fileMark" button
+   When user should be able to click file button
    Then verify that Actions button is appeared
-   When user should be able to click "Actions" button
-   Then user should be able to click "Delete" button
-   And verify that the file is deleted
+  # When user should be able to click action buttons
+   Then user should be able to click delete buttons
+   And verify that the file is deleteds
