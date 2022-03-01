@@ -93,7 +93,7 @@ public class FilesPage extends BasePage {
     public  void selectCheckBox(String str){
         SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).click();
         System.out.println("SkyDriver.get().findElement(By.xpath(\"//tr[@data-file='\" + str + \"']//td//label\")).getText() " +
-                "= " + SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).getText());
+                " = " + SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).getText());
     }
 
 }

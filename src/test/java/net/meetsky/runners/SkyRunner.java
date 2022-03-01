@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         strict = true,
         dryRun =false,
 
-        tags = "@coezen"
+        tags = " @ETSKY-325"
 )
 
 public class SkyRunner {
