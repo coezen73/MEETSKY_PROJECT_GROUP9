@@ -35,8 +35,8 @@ public class FilesPage extends BasePage {
     @FindBy(xpath = "//*[@id='fileList']/tr")
     public List<WebElement> check;
 
-    @FindBy(xpath = "//input[@type='file']")
-    public WebElement iucar;
+    @FindBy(xpath = "//span[@class='innernametext' and contains(.,'HelloMeetSky')]")
+    public WebElement helloSky;
 
     @FindBy(xpath = "//tbody[@id='fileList']//input[@type='checkbox']")
     public List<WebElement> checkBoxes;

@@ -16,20 +16,14 @@ import java.util.List;
 
 public class FilesStepDefs {
     FilesPage filesPage = new FilesPage();
-    @When("user should be navigate the add icon module")
-    public void user_should_be_navigate_the_add_icon_module() {
+    @When("user should be click the add icon module")
+    public void user_should_be_click_the_add_icon_module() {
         SkyUtils.waitFor(1);
         filesPage.addIcon.click();
         SkyUtils.waitFor(3);
     }
-//    @Then("navigate to {string} button")
-//    public void navigate_to_button(String buttonName) {
-//       // System.out.println("buttonName = " + buttonName);
-//       // filesPage.navigate(buttonName);
 
-//    }
-
-    @When("user should be able to click {string} button")
+    @Then("user should be able to click {string} button")
     public void user_should_be_able_to_click_button(String buttonName) {
         SkyUtils.waitFor(3);
         filesPage.navigate(buttonName);
@@ -66,7 +60,10 @@ public class FilesStepDefs {
 
             }
         SkyUtils.waitFor(3);
-        Assert.assertTrue(file.containsAll(file));
+        Assert.assertEquals(filename,SkyDriver.get().findElement(By.xpath("//span[@class='innernametext' and contains(.,'"+filename+"')]")).getText());
+
+
+
 
     }
     @Then("verify that Actions button is appeared")
@@ -91,17 +88,12 @@ public class FilesStepDefs {
         filesPage.navigate(string);
         SkyUtils.waitFor(3);
 
-
-
     }
     @Then("user should be able to click delete buttons")
     public void user_should_be_able_to_click_delete_buttons() {
         filesPage.deleteButton.click();
         SkyUtils.waitFor(2);
     }
-
-
-
 
     @Then("verify that the file is deleteds")
     public void verify_that_the_file_is_deleteds() {
@@ -110,7 +102,20 @@ public class FilesStepDefs {
         Assert.assertFalse(file.contains("HelloMeetSky.docx"));
 
     }
+    @Then("user should be able to upload {string} file name")
+    public void user_should_be_able_to_upload_file_name(String string) {
+        String projectPath = System.getProperty("user.dir");
+        String filePath = "src/test/resources/HelloMeetSky.docx";
+        String fullPath =  projectPath+"/"+filePath;
+        System.out.println(fullPath);
+
+        SkyDriver.get().findElement(By.xpath("//input[@type='file']")).sendKeys(fullPath);
+        SkyUtils.waitFor(10);
+       // SkyDriver.get().findElement(By.xpath("//input[@type='file']")).click();
+        SkyDriver.get().navigate().refresh();
 
 
+
+    }
 
 }
