@@ -30,6 +30,7 @@ Feature: Add New folder, it should expect all chars as file name
 	# 
   @ETSKY-325
   Scenario: Delete File functionality - Cucumber S3
+
     Given the user logged in
     When user should be able to click file button
     Then verify that Actions button is appeared
