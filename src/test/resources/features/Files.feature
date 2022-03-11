@@ -1,5 +1,4 @@
-Feature: Add New folder, it should expect all chars as file name
-
+Feature: Add - Delete - Move File Functionalities
 
 	#{color:#ff0000}*US*{color}
 	#
@@ -8,7 +7,7 @@ Feature: Add New folder, it should expect all chars as file name
 	#{color:#ff0000}*AC*{color}
 	#
 	#Add New folder, it should expect all chars as file name
-  @ETSKY-345 @wip
+  @ETSKY-345
   Scenario: Add File functionality automation
     Given the user logged in
     When user should be click the add icon module
@@ -18,14 +17,11 @@ Feature: Add New folder, it should expect all chars as file name
     And verify new "Şükriye_Doğaç!" file is shown on the page
 
 
-@coezen
- Scenario: User can delete any selected item under the files module successfully
-   Given the user logged in
-   When user should be able to click file button
-   Then verify that Actions button is appeared
-  # When user should be able to click action buttons
-   Then user should be able to click delete buttons
-   And verify that the file is deleteds
+  Scenario: User can upload a file
+    Given the user logged in
+    When  user should be click the add icon module
+    Then user should be able to upload "HelloMeetSky" file name
+    And verify new "HelloMeetSky" file is shown on the page
 
 #*US:*
 	#
@@ -45,9 +41,3 @@ Feature: Add New folder, it should expect all chars as file name
     Then user should be able to click delete buttons
     And verify that the file is deleted
 
-    @wip
-    Scenario: User can upload a file
-      Given the user logged in
-      When  user should be click the add icon module
-      Then user should be able to upload "HelloMeetSky" file name
-      And verify new "HelloMeetSky" file is shown on the page
