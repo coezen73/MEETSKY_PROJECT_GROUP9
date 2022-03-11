@@ -17,15 +17,12 @@ Feature: Add New folder, it should expect all chars as file name
     Then user should be able to click confirm icon
     And verify new "Şükriye_Doğaç!" file is shown on the page
 
-
-@coezen
- Scenario: User can delete any selected item under the files module successfully
-   Given the user logged in
-   When user should be able to click file button
-   Then verify that Actions button is appeared
-  # When user should be able to click action buttons
-   Then user should be able to click delete buttons
-   And verify that the file is deleteds
+  @wip
+  Scenario: User can upload a file
+    Given the user logged in
+    When  user should be click the add icon module
+    Then user should be able to upload "HelloMeetSky" file name
+    And verify new "HelloMeetSky" file is shown on the page
 
 #*US:*
 	#
@@ -36,7 +33,7 @@ Feature: Add New folder, it should expect all chars as file name
 	#*Users can delete any selected item from the Files module.*
 	#
 	# 
-  @ETSKY-325
+  @ETSKY-325 @wip
   Scenario: Delete File functionality - Cucumber S3
 
     Given the user logged in
@@ -45,9 +42,3 @@ Feature: Add New folder, it should expect all chars as file name
     Then user should be able to click delete buttons
     And verify that the file is deleted
 
-    @wip
-    Scenario: User can upload a file
-      Given the user logged in
-      When  user should be click the add icon module
-      Then user should be able to upload "HelloMeetSky" file name
-      And verify new "HelloMeetSky" file is shown on the page
