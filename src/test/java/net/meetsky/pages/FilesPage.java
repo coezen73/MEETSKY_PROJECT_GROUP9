@@ -66,6 +66,9 @@ public class FilesPage extends BasePage {
    public List<WebElement> checkfileList;
 
 
+    @FindBy(xpath = "//td/input[@type='checkbox']")
+    public WebElement checkBox;
+
     public void navigate(String buttonName) {
         switch (buttonName) {
             case "Upload file":

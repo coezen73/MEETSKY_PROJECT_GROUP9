@@ -24,3 +24,14 @@ Feature: Contacts Module Functions
     And Enter an "adrn@cydeo.com" into Email inbox
     And Click any empty area
     Then Verify new contact is shown in contact list
+
+  @ETSKY-383
+  Scenario: User can create a new contact via "+New contact" button
+    Given the user accesses the Log in page
+    And the user login with valid credential "Employee17" "Employee123"
+    When Navigate to "Contacts" module
+    And Click "+ New contact" button
+    And Enter a "Tom Cruise" into fullname inbox
+    And Enter an "tmc@cydeo.com" into Email inbox
+    And Click any empty area
+    Then Verify new contact is shown in contact list
