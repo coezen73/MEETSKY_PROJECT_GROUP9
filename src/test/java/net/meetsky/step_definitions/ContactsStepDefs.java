@@ -66,6 +66,7 @@ public class ContactsStepDefs {
         this.email=email;
         ContactsPage contactsPage=new ContactsPage();
         contactsPage.emailbox.clear();
+        SkyUtils.waitFor(3);
         contactsPage.emailbox.sendKeys(email);
         SkyUtils.waitForPageToLoad(2);
         System.out.println("email = " + contactsPage.emailbox.getText());
@@ -81,6 +82,7 @@ public class ContactsStepDefs {
     public void verify_new_contact_is_shown_in_contact_list() {
         ContactsPage contactsPage = new ContactsPage();
         List<String> contacts = SkyUtils.getElementsText(contactsPage.contactList);
+        SkyUtils.waitFor(2);
         System.out.println("fullname = " + fullname);
         Assert.assertTrue(contacts.contains(fullname));
     }

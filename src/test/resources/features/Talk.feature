@@ -1,4 +1,4 @@
-
+@Talk
 @ETSKY-339
 Feature: Default
 
@@ -21,8 +21,6 @@ Feature: Default
     And click on +sign button
     And enter conversation name and add click participants button
     Then user created new conversation
-
-@Talk
 
 
 	#*US:*
@@ -50,3 +48,14 @@ Feature: Default
     When Click on "Participants" option on the right sidebar.
     Then Verify user "Employee29" and participant "Employee101" are shown on participant tab.
 
+  @ETSKY-388
+  Scenario: User can start a call by clicking "Start call" button.
+    Given the user accesses the Log in page
+    And the user login with valid credential "Employee49" "Employee123"
+    When Navigate to "Talk" module
+    And Enter "Employee101" into Search conversations or users inbox
+    And Select user "Employee101"
+    And Click on Start call button
+    Then Verify video call page is shown.
+    When Click on "Participants" option on the right sidebar.
+    Then Verify user "Employee49" and participant "Employee101" are shown on participant tab.
