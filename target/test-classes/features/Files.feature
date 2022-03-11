@@ -1,5 +1,4 @@
-Feature: Add New folder, it should expect all chars as file name
-
+Feature: Add - Delete - Move File Functionalities
 
 	#{color:#ff0000}*US*{color}
 	#
@@ -8,7 +7,7 @@ Feature: Add New folder, it should expect all chars as file name
 	#{color:#ff0000}*AC*{color}
 	#
 	#Add New folder, it should expect all chars as file name
-  @ETSKY-345 @wip
+  @ETSKY-345
   Scenario: Add File functionality automation
     Given the user logged in
     When user should be click the add icon module
@@ -17,7 +16,7 @@ Feature: Add New folder, it should expect all chars as file name
     Then user should be able to click confirm icon
     And verify new "Şükriye_Doğaç!" file is shown on the page
 
-  @wip
+
   Scenario: User can upload a file
     Given the user logged in
     When  user should be click the add icon module
@@ -33,7 +32,7 @@ Feature: Add New folder, it should expect all chars as file name
 	#*Users can delete any selected item from the Files module.*
 	#
 	# 
-  @ETSKY-325 @wip
+  @ETSKY-325
   Scenario: Delete File functionality - Cucumber S3
 
     Given the user logged in

@@ -1,5 +1,5 @@
 
-Feature: Verified users should be able to login
+Feature: Login Functionalities
 
 Background:
    Given the user is on the login page
