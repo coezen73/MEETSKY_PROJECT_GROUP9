@@ -2,6 +2,7 @@ package net.meetsky.pages;
 
 import gherkin.lexer.Fi;
 import net.meetsky.utilities.SkyDriver;
+import net.meetsky.utilities.SkyUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,9 @@ public class FilesPage extends BasePage {
 
     @FindBy(xpath = "(//span[@class='displayname'])[3]")
     public WebElement newTextDocument;
+
+    @FindBy(xpath = "//input[@value='New text document.md']")
+    public WebElement inNewTextDocument;
 
     @FindBy(xpath = "(//input[@id='view13-input-folder'])[1]")
     public WebElement newFolder;
@@ -98,7 +102,21 @@ public class FilesPage extends BasePage {
         System.out.println("SkyDriver.get().findElement(By.xpath(\"//tr[@data-file='\" + str + \"']//td//label\")).getText() " +
                 " = " + SkyDriver.get().findElement(By.xpath("//tr[@data-file='" + str + "']//td//label")).getText());
     }
+public void fileSendKeys(String filename){
+    switch (filename) {
+        case "Şükriye_Doğaç!":
+           new FilesPage().newFolder.clear();
+            new FilesPage().newFolder.sendKeys(filename);
+            SkyUtils.waitFor(2);
+            break;
+        case "Willem Alexander 4":
+            new FilesPage().inNewTextDocument.clear();
+            new FilesPage().inNewTextDocument.sendKeys(filename);
+            SkyUtils.waitFor(2);
+            break;
 
+        }
+    }
 }
 
 
