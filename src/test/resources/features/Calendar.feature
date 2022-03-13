@@ -1,4 +1,4 @@
-
+@Calendar @Regression
 Feature: Default
 
 # US: As a user, I should be able to create a new event by using +New event button
