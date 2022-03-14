@@ -1,11 +1,9 @@
-
+@Files @Regression
 Feature: Add - Delete - Move File Functionalities
 
-	#{color:#ff0000}*US*{color}
-	#
 	#As a user, I can upload a file
 	#
-	#{color:#ff0000}*AC*{color}
+	#AC
 	#
 	#Add New folder, it should expect all chars as file name
   @ETSKY-345

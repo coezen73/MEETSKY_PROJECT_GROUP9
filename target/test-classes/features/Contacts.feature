@@ -1,4 +1,4 @@
-@Contacts
+@Contacts @Regression
 Feature: Contacts Module Functions
 
 	#*US:*
