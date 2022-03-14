@@ -1,3 +1,4 @@
+@Files @Regression
 
 Feature: Add - Delete - Move File Functionalities
 
