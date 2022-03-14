@@ -1,5 +1,5 @@
-@ETSKY-323
-Feature:default
+@OnlineStatus @Regression
+Feature:Online Status
 
   Background:
     Given the user accesses the Log in page
@@ -14,7 +14,7 @@ Feature:default
 #User can view Online Status
 #User can change Online Status
 #User can set a status message
-
+  @ETSKY-323
   Scenario Outline: User can chance online status and set a status message
     Given The user clicks an "<option>" on the online status section
     Then  The user writes any status message
