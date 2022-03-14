@@ -1,5 +1,5 @@
 @Calendar @Regression
-Feature: Default
+Feature: Calendar Module
 
 # US: As a user, I should be able to create a new event by using +New event button
 # AC: When I click on +New event button, a pop-up will appear and create a new event by filling out the form
@@ -23,13 +23,9 @@ When the user can click the save button
 
 
 
-	#*{color:#de350b}US{color}*
-	#
 	#As a user, I should be able to see the Daily-Weekly-Monthly calendar view under the Calendar module
 	#
 	# 
-	#
-	#*{color:#de350b}AC{color}*
 	#
 	#Under the Calendar module, a pop-up should appear when I click on the Hamburger menu
 	#The Hamburger menu should include Day, Week, Month, List options

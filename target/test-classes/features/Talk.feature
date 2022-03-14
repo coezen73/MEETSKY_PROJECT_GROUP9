@@ -1,6 +1,6 @@
-@Talk
-@ETSKY-339
-Feature: Default
+@Talk @Regression
+
+Feature: Talk Functionality
 
 	#{color:#de350b}*US*{color}
 	#As a MeetSky application basic user, I should be able to create a new conversation
