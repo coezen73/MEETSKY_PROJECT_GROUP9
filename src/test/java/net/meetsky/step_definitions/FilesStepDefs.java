@@ -33,11 +33,9 @@ public class FilesStepDefs {
 
     @Then("user should be able to write {string} file name")
     public void user_should_be_able_to_write_file_name(String filename) {
-        filesPage.newFolder.clear();
-        filesPage.newFolder.sendKeys(filename);
-        SkyUtils.waitFor(2);
-    }
+        filesPage.fileSendKeys(filename);
 
+    }
     @When("user should be able to click file button")
     public void user_should_be_able_to_click_file_button() {
         filesPage.selectCheckBox("HelloMeetSky.docx");

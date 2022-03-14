@@ -1,4 +1,5 @@
 @Files @Regression
+
 Feature: Add - Delete - Move File Functionalities
 
 	#{color:#ff0000}*US*{color}
@@ -18,11 +19,37 @@ Feature: Add - Delete - Move File Functionalities
     And verify new "Şükriye_Doğaç!" file is shown on the page
 
 
-  Scenario: User can upload a file
+	#{color:#de350b}*US*{color}
+	#
+	#As a user, I can upload a file.
+	#
+	#{color:#de350b}*AC*{color}
+	#
+	# A word file welcome
+  @ETSKY-394
+  Scenario: Upload a new file
     Given the user logged in
     When  user should be click the add icon module
     Then user should be able to upload "HelloMeetSky" file name
     And verify new "HelloMeetSky" file is shown on the page
+
+#{color:#de350b}*US*{color}
+	#
+	#As a user, I can upload a file.
+	#
+	#{color:#de350b}*AC*{color}
+	#
+	#It should accept all chars as file name
+	#
+	# 
+  @ETSKY-395
+  Scenario: Add a New text document
+    Given the user logged in
+    When user should be click the add icon module
+    Then user should be able to click "New text document" button
+    Then user should be able to write "Willem Alexander 4" file name
+    Then user should be able to click confirm icon
+    And verify new "Willem Alexander 4" file is shown on the page
 
 #*US:*
 	#
